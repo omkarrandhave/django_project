@@ -1,0 +1,27 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href=" {% static 'css/style.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}" >
+	
+	<title>Contact us</title>
+</head>
+
+<body>
+	
+		{% if user.is_authenticated %}
+		<h3> Thanks  {{user.first_name}} {{user.last_name}} , we will reply to  {{user.email}} </h3> 
+		{% else %}
+		<h3>You need to login first.</h3>
+		{% endif %}
+	
+</body>
+
+
+
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href=" {% static 'css/logstyle.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}" >
+	
+	<title>Login Form</title>
+</head>
+
+<body>
+
+	<form action="login" method="post" class="login-box">
+		{% csrf_token %}	
+
+		<div class="text-box">
+			<i class="fa fa-user-o" aria-hidden="true"></i>
+			<input type="text" placeholder="Username" name="username" id="">
+		</div>
+
+		<div class="text-box">
+			<i class="fa fa-lock" aria-hidden="true"></i>
+			<input type="password" placeholder="Password" name="password" id="">
+		</div>
+
+		<input class="btn" type="submit" name="" value="Sign in">
+		
+		<div class="text-box">
+			{% for message in messages %}
+				{{message}}
+			{% endfor %}
+		</div>
+
+	</form>
+
+	
+
+
+
+
+</body>
+</html>
